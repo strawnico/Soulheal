@@ -14,8 +14,8 @@ export default function Input(props) {
         placeholder={props.placeholder}
         className={
           value
-            ? "text-input bg-white placeholder:font-normal placeholder:sm:text-base placeholder:text-sm outline outline-none placeholder:text-[#cccccc] outline-2 outline-[#7B9A74] rounded-md w-full h-10  text-black pl-4 font-normal"
-            : "text-input bg-[#f1f1f1] focus:bg-white placeholder:font-normal placeholder:sm:text-base placeholder:text-sm focus:outline outline-none placeholder:text-[#cccccc] focus:outline-2 focus:outline-[#7B9A74] rounded-md w-full h-10  text-black pl-4 font-normal"
+            ? "text-input bg-white placeholder:font-normal placeholder:sm:text-base placeholder:text-sm outline outline-none placeholder:text-[#cccccc] outline-2 outline-verdePrincipal rounded-md w-full h-10  text-black pl-4 font-normal"
+            : "text-input bg-[#f1f1f1] focus:bg-white placeholder:font-normal placeholder:sm:text-base placeholder:text-sm focus:outline outline-none placeholder:text-[#cccccc] focus:outline-2 focus:outline-verdePrincipal rounded-md w-full h-10  text-black pl-4 font-normal"
         }
       />
     </div>

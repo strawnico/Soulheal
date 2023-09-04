@@ -15,6 +15,9 @@ module.exports = {
       fontFamily: {
         works: ["Work sans", "sans-serif"],
        },
+       colors: {
+        verdePrincipal: '#7B9A74'
+       }
     },
   },
   plugins: [],
