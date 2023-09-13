@@ -10,7 +10,11 @@ export default function Input(props) {
         name={props.name}
         id={props.id}
         type={props.type}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={(e) => {
+          const newValue = e.target.value;
+          setValue(newValue);
+          props.onChange(newValue);
+        }}
         placeholder={props.placeholder}
         className={
           value

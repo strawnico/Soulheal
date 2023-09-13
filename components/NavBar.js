@@ -10,7 +10,7 @@ import Link from "next/link";
 export default function NavBar({ selectedOption }) {
   return (
     <main>
-      <div className="navBar w-full flex p-4 justify-center items-center gap-6 absolute bottom-0 h-24 border">
+      <div className="navBar w-full flex p-4 justify-center items-center gap-6 absolute bottom-0 h-24 border bg-white">
         <div className="flex flex-col justify-center items-center gap-1 cursor-pointer">
           <Link href="/home" className={selectedOption == "Home" ? "p-3 bg-[#7B9A74] rounded-full" : "p-3 rounded-full"}>
             <BiHomeAlt2 className={selectedOption == "Home" ? "selectedIcon" : "icon"} />
