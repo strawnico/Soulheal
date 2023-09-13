@@ -3,11 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Category(props) {
-  const href = `/diet/category/${props.name}`;
+export default function Meal(props) {
+  const href = `/diet/meals/${props.id}`;
 
   return (
-    <Link href={href}>
+    <Link className="h-fit" href={href}>
       <div className="flex justify-center items-center w-full h-28 rounded-md relative hover:opacity-80 cursor-pointer active:scale-90 transition-all">
         <Image
           className="w-full h-full rounded-md"
@@ -17,7 +17,7 @@ export default function Category(props) {
           src={props.image}
         ></Image>
         <div className="w-full h-full absolute bg-black rounded-md opacity-50"></div>
-        <p className="text-white absolute">{props.name}</p>
+        <p className="text-white text-center absolute">{props.name}</p>
       </div>
     </Link>
   );

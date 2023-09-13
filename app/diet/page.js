@@ -1,12 +1,13 @@
 "use client";
 
 import NavBar from "@/components/NavBar";
+import Loading from "@/components/Loading";
 import PriButton from "../../components/PrimaryButton";
 import Input from "../../components/CompInput";
 import Category from "../../components/diet/Category";
 import axios from "axios";
-import Loading from "@/components/Loading";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Diet() {
   const [loading, setLoading] = useState(false);
@@ -59,7 +60,7 @@ export default function Diet() {
             <Loading></Loading>
           </div>
         ) : (
-          <div className="mt-4 gap-5 grid grid-cols-2 justify-between overflow-y-scroll max-h-60">
+          <div className="mt-4 gap-5 grid grid-cols-2 justify-between overflow-y-scroll listHeigth">
             {categoriesList.map((category) => {
               return (
                 <Category key={category.idCategory} name={category.strCategory} image={category.strCategoryThumb}></Category>
