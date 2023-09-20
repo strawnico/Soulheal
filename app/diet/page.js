@@ -52,7 +52,9 @@ export default function Diet() {
       <main className="flex flex-col p-6">
         <div className="flex flex-col items-center justify-center border-2 border-[#BABABA] rounded-md h-40">
           <p className="text-center font-works text-gray-400">Você não possuí um plano de dieta</p>
-          <PriButton>Criar plano</PriButton>
+          <Link href="./diet/calculator">
+            <PriButton>Criar plano</PriButton>
+          </Link>
         </div>
         <Input placeholder="Buscar" value={searchValue} onChange={handleInputChange}></Input>
         {loading ? (
