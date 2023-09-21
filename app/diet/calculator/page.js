@@ -41,7 +41,11 @@ export default function Calculator() {
       </div>
       <div className="flex flex-col gap-2 mt-6">
         <select
-          className="bg-[#f1f1f1] mt-5 focus:text-black font-works h-10 pl-4 rounded-md text-[#cccccc]"
+          className={
+            formValue.sexo
+              ? "bg-[#f1f1f1] mt-5 focus:text-black border-2 border-verdePrincipal font-works h-10 pl-4 rounded-md text-black"
+              : "bg-[#f1f1f1] mt-5 focus:text-black font-works h-10 pl-4 rounded-md text-[#cccccc]"
+          }
           name="sexo"
           id="sexo"
           onChange={(e) => {
@@ -58,7 +62,11 @@ export default function Calculator() {
         <Input placeholder="Peso" value={formValue.peso} onChange={handlePesoChange}></Input>
         <Input placeholder="Altura" value={formValue.altura} onChange={handleAlturaChange}></Input>
         <select
-          className="bg-[#f1f1f1] mt-5 focus:text-black font-works h-10 pl-4 rounded-md text-[#cccccc]"
+          className={
+            formValue.activityFrequency
+              ? "bg-[#f1f1f1] mt-5 focus:text-black border-2 border-verdePrincipal font-works h-10 pl-4 rounded-md text-black"
+              : "bg-[#f1f1f1] mt-5 focus:text-black font-works h-10 pl-4 rounded-md text-[#cccccc]"
+          }
           name="activityFrequency"
           id="activityFrequency"
           onChange={(e) => {
