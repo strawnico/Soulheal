@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { IoIosArrowBack } from "react-icons/io";
-import Input from "../../../components/CompInput";
-import PrimaryButton from "../../../components/PrimaryButton";
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { IoIosArrowBack } from 'react-icons/io';
+import Input from '../../../components/CompInput';
+import PrimaryButton from '../../../components/PrimaryButton';
 
 export default function Calculator() {
   const [formValue, setFormValue] = useState({
-    sexo: "",
-    activityFrequency: "",
+    sexo: '',
+    activityFrequency: '',
     idade: null,
     peso: null,
     altura: null,
@@ -34,7 +34,7 @@ export default function Calculator() {
   return (
     <main className="font-works flex flex-col p-6">
       <div className="flex items-center gap-4">
-        <Link href={"./profile"}>
+        <Link href={'../diet'}>
           <IoIosArrowBack className="text-2xl"></IoIosArrowBack>
         </Link>
         <p className="text-2xl font-semibold">Calculadora de calorias</p>
@@ -43,8 +43,8 @@ export default function Calculator() {
         <select
           className={
             formValue.sexo
-              ? "bg-[#f1f1f1] mt-5 focus:text-black border-2 border-verdePrincipal font-works h-10 pl-4 rounded-md text-black"
-              : "bg-[#f1f1f1] mt-5 focus:text-black font-works h-10 pl-4 rounded-md text-[#cccccc]"
+              ? 'bg-[#f1f1f1] mt-5 focus:text-black border-2 border-verdePrincipal font-works h-10 pl-4 rounded-md text-black'
+              : 'bg-[#f1f1f1] mt-5 focus:text-black font-works h-10 pl-4 rounded-md text-[#cccccc]'
           }
           name="sexo"
           id="sexo"
@@ -64,8 +64,8 @@ export default function Calculator() {
         <select
           className={
             formValue.activityFrequency
-              ? "bg-[#f1f1f1] mt-5 focus:text-black border-2 border-verdePrincipal font-works h-10 pl-4 rounded-md text-black"
-              : "bg-[#f1f1f1] mt-5 focus:text-black font-works h-10 pl-4 rounded-md text-[#cccccc]"
+              ? 'bg-[#f1f1f1] mt-5 focus:text-black border-2 border-verdePrincipal font-works h-10 pl-4 rounded-md text-black'
+              : 'bg-[#f1f1f1] mt-5 focus:text-black font-works h-10 pl-4 rounded-md text-[#cccccc]'
           }
           name="activityFrequency"
           id="activityFrequency"
