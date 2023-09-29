@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import NavBar from '@/components/NavBar';
-import Braco from '../../public/arm.png';
-import ExerciseGroup from '@/components/gym/ExerciseGroup';
+import Image from "next/image";
+import NavBar from "@/components/NavBar";
+import Braco from "../../public/arm.png";
+import ExerciseGroup from "@/components/gym/ExerciseGroup";
 
 export default function Gym() {
   return (
@@ -23,11 +23,13 @@ export default function Gym() {
         </div>
         <div>
           <p className="font-semibold text-xl text-gray-500">TREINOS</p>
-          <ExerciseGroup name="TreinoA" groups={['Glúteo', 'Posterior']} exercisesQuantity="7"></ExerciseGroup>
-          <ExerciseGroup name="TreinoB" groups={['Tríceps', 'Bíceps']} exercisesQuantity="8"></ExerciseGroup>
+          <div className="w-full max-h-screen overflow-y-scroll workoutListHeight">
+            <ExerciseGroup name="TreinoA" groups={["Glúteo", "Posterior"]} exercisesQuantity="7"></ExerciseGroup>
+            <ExerciseGroup name="TreinoB" groups={["Tríceps", "Bíceps"]} exercisesQuantity="8"></ExerciseGroup>
+          </div>
         </div>
       </main>
-      <NavBar selectedOption={'Gym'}></NavBar>
+      <NavBar selectedOption={"Gym"}></NavBar>
     </div>
   );
 }

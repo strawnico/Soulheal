@@ -27,6 +27,14 @@
   height: calc(100vh - 23rem);
 }
 
+.workoutListHeight {
+  height: calc(100vh - 20rem);
+}
+
+.homeOptionsListHeight {
+  max-height: calc(100vh - 9rem);
+}
+
 .icon {
   color: #BABABA;
   font-size: 1.6rem;
