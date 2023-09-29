@@ -2,6 +2,11 @@
 
 import NavBar from "@/components/NavBar";
 import Option from "@/components/medidation/option";
+import { BsCloudMoon } from "react-icons/bs";
+import { SiOxygen } from "react-icons/si";
+import { RiFocus2Line } from "react-icons/ri";
+import { AiOutlineStar } from "react-icons/ai";
+import { SlEnergy } from "react-icons/sl";
 
 export default function Meditation() {
   return (
