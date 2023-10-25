@@ -6,72 +6,109 @@ import PriButton from "../../components/PrimaryButton";
 import Input from "../../components/CompInput";
 import Category from "../../components/diet/Category";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useDeferredValue, useEffect, useState } from "react";
 import Link from "next/link";
+import Mobile from "@/components/mobile";
 
 export default function Diet() {
-  const [loading, setLoading] = useState(false);
-  const [categoriesList, setCategoriesList] = useState([]);
+  const [categoriesList, setCategoriesList] = useState([
+    {
+      name: "Cafés da manhã",
+      id: 1,
+      image:
+        "https://images.unsplash.com/photo-1646830167722-5146f8cb4532?auto=format&fit=crop&q=80&w=2802&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      name: "Almoços",
+      id: 2,
+      image:
+        "https://images.unsplash.com/photo-1565895405138-6c3a1555da6a?auto=format&fit=crop&q=80&w=2940&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      name: "Lanches",
+      id: 3,
+      image:
+        "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&q=80&w=2865&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      name: "Jantas",
+      id: 4,
+      image:
+        "https://images.unsplash.com/photo-1536392706976-e486e2ba97af?auto=format&fit=crop&q=80&w=2940&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+  ]);
   const [originalCategoriesList, setOriginalCategoriesList] = useState([]);
   const [searchValue, setSearchValue] = useState("");
-
-  const getCategories = async () => {
-    axios
-      .get("https://www.themealdb.com/api/json/v1/1/categories.php")
-      .then(function (response) {
-        setLoading(false);
-        setCategoriesList(response.data.categories);
-        setOriginalCategoriesList(response.data.categories);
-      })
-      .catch(function (error) {
-        return error;
-      });
-  };
 
   const handleInputChange = (value) => {
     setSearchValue(value);
   };
 
   useEffect(() => {
-    setLoading(true);
-    async function fetchData() {
-      await getCategories();
-    }
-    fetchData();
+    setOriginalCategoriesList(categoriesList);
   }, []);
 
   useEffect(() => {
     const newList = originalCategoriesList.filter((category) =>
-      category.strCategory.toLowerCase().includes(searchValue.toLowerCase())
+      category.name.toLowerCase().includes(searchValue.toLowerCase())
     );
     setCategoriesList(newList);
   }, [searchValue, originalCategoriesList]);
 
   return (
-    <div>
-      <main className="flex flex-col p-6">
+    <main>
+      <div className="flex flex-col p-6">
         <div className="flex flex-col items-center justify-center border-2 border-[#BABABA] rounded-md h-40">
-          <p className="text-center font-works text-gray-400">Você não possuí um plano de dieta</p>
-          <Link href="./diet/calculator" className="w-72">
-            <PriButton>Criar plano</PriButton>
-          </Link>
+          {localStorage.getItem("formValue") ? (
+            <div>
+              <p>
+                Plano atual:{" "}
+                {JSON.parse(localStorage.getItem("formValue")).dietType}
+              </p>
+              <p>
+                Objetivo:{" "}
+                {JSON.parse(localStorage.getItem("formValue")).objetivo} peso
+              </p>
+              <Link href="./diet/calculator" className="w-72">
+                <PriButton>Trocar plano</PriButton>
+              </Link>
+            </div>
+          ) : (
+            <div>
+              <p className="text-center font-works text-gray-400">
+                Você não possuí um plano de dieta
+              </p>
+              <Link href="./diet/calculator" className="w-72">
+                <PriButton>Criar plano</PriButton>
+              </Link>
+            </div>
+          )}
         </div>
-        <Input placeholder="Buscar" value={searchValue} onChange={handleInputChange}></Input>
-        {loading ? (
-          <div className="h-72 flex justify-center items-center">
-            <Loading></Loading>
+        {localStorage.getItem("formValue") ? (
+          <div>
+            <Input
+              placeholder="Buscar"
+              value={searchValue}
+              onChange={handleInputChange}
+            ></Input>
+            <div className="mt-4 gap-2 grid grid-cols-2">
+              {categoriesList.map((category) => {
+                return (
+                  <Category
+                    key={category.id}
+                    id={category.id}
+                    name={category.name}
+                    image={category.image}
+                  ></Category>
+                );
+              })}
+            </div>
           </div>
         ) : (
-          <div className="mt-4 gap-5 grid grid-cols-2 justify-between overflow-y-scroll listHeigth">
-            {categoriesList.map((category) => {
-              return (
-                <Category key={category.idCategory} name={category.strCategory} image={category.strCategoryThumb}></Category>
-              );
-            })}
-          </div>
+          false
         )}
-      </main>
+      </div>
       <NavBar selectedOption={"Diet"}></NavBar>
-    </div>
+    </main>
   );
 }

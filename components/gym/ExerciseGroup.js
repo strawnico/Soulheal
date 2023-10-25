@@ -15,7 +15,7 @@ export default function ExerciseGroup(props) {
           : "w-full flex shadow-md p-6 flex-col gap-1 rounded-md"
       }
     >
-      <div className="flex w-full justify-between">
+      <div className="flex w-full justify-between ">
         <p className="font-semibold text-2xl text-gray-700">{props.name}</p>
         {props.isFinished ? (
           false

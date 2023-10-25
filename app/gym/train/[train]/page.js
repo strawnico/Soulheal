@@ -8,23 +8,76 @@ import Button from "@/components/PrimaryButton";
 export default function Page({ params }) {
   return (
     <main className="font-works flex flex-col p-6">
-      <div className="flex items-center gap-4">
+      <div className="h-20 w-full flex items-center justify-center shadow-lg">
         <Link href={"../../gym"}>
-          <IoIosArrowBack className="text-2xl"></IoIosArrowBack>
+          <IoIosArrowBack className="text-2xl ml-4"></IoIosArrowBack>
         </Link>
-        <p className="text-2xl font-semibold">{params.train}</p>
+        <p className="text-2xl text-black font-works font-semibold flex-1 text-center mr-6">
+          {params.train}
+        </p>
       </div>
+
       <div className="w-full mt-4 gap-4 flex flex-col">
-        <Exercise id="1" name="Agachamento livre" seriesQuantity="4" repsQuantity="12"></Exercise>
-        <Exercise id="2" name="Leg press horizontal" seriesQuantity="3" repsQuantity="10"></Exercise>
-        <Exercise id="3" name="Afundo com halteres" seriesQuantity="3" repsQuantity="12"></Exercise>
-        <Exercise id="4" name="Cadeira extensora" seriesQuantity="4" repsQuantity="10"></Exercise>
-        <Exercise id="5" name="Cadeira flexora" seriesQuantity="4" repsQuantity="10"></Exercise>
-        <Exercise id="6" name="Levantamento terra" seriesQuantity="3" repsQuantity="12"></Exercise>
-        <Exercise id="7" name="Máquina adutora" seriesQuantity="3" repsQuantity="12"></Exercise>
-        <Exercise id="8" name="Máquina abdutora" seriesQuantity="3" repsQuantity="12"></Exercise>
-        <Exercise id="9" name="Stiff" seriesQuantity="4" repsQuantity="10"></Exercise>
-        <Exercise id="10" name="Panturrilha no leg press" seriesQuantity="4" repsQuantity="15"></Exercise>
+        <Exercise
+          id="1"
+          name="Agachamento livre"
+          seriesQuantity="4"
+          repsQuantity="12"
+        ></Exercise>
+        <Exercise
+          id="2"
+          name="Leg press horizontal"
+          seriesQuantity="3"
+          repsQuantity="10"
+        ></Exercise>
+        <Exercise
+          id="3"
+          name="Afundo com halteres"
+          seriesQuantity="3"
+          repsQuantity="12"
+        ></Exercise>
+        <Exercise
+          id="4"
+          name="Cadeira extensora"
+          seriesQuantity="4"
+          repsQuantity="10"
+        ></Exercise>
+        <Exercise
+          id="5"
+          name="Cadeira flexora"
+          seriesQuantity="4"
+          repsQuantity="10"
+        ></Exercise>
+        <Exercise
+          id="6"
+          name="Levantamento terra"
+          seriesQuantity="3"
+          repsQuantity="12"
+        ></Exercise>
+        <Exercise
+          id="7"
+          name="Máquina adutora"
+          seriesQuantity="3"
+          repsQuantity="12"
+        ></Exercise>
+        <Exercise
+          id="8"
+          name="Máquina abdutora"
+          seriesQuantity="3"
+          repsQuantity="12"
+        ></Exercise>
+        <Exercise
+          id="9"
+          name="Stiff"
+          seriesQuantity="4"
+          repsQuantity="10"
+        ></Exercise>
+        <Exercise
+          id="10"
+          name="Panturrilha no leg press"
+          seriesQuantity="4"
+          repsQuantity="15"
+        ></Exercise>
       </div>
       <Button>Concluir treino</Button>
     </main>
