@@ -27,6 +27,10 @@
   height: calc(100vh - 23rem);
 }
 
+.meditationHeight {
+  height: calc(100vh - 16rem);
+}
+
 .workoutListHeight {
   height: calc(100vh - 20rem);
 }
