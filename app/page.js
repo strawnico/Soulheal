@@ -7,8 +7,37 @@ import Link from "next/link";
 import PriButton from "../components/PrimaryButton";
 import Input from "../components/CompInput";
 import Mobile from "../components/mobile";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../auth/firebase";
+import { useState } from "react";
+// import { toast, ToastContainer } from "react-nextjs-toast";
 
 export default function Login() {
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+
+  const entrar = async () => {
+
+    signInWithEmailAndPassword(auth, email, senha)
+      .then(async (userCredential) => {
+        localStorage.setItem('uid', auth.currentUser.uid)
+        // toast.notify("Você está sendo logado...", {
+        //   duration: 5,
+        //   type: "success",
+        // });
+        window.location.pathname = "/home";
+      })
+      .catch((error) => {
+        console.log({error}.error);
+        // toast.notify("A senha ou o email estão errados.", {
+        //   duration: 5,
+        //   type: "error",
+        // });
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
+  }
+
   return (
     <Mobile>
       <div className="h-screen">
@@ -20,8 +49,8 @@ export default function Login() {
           <div className="justify-center flex flex-col mx-auto">
             <h2 className="font-works font-bold text-xl"> Olá novamente 👋 </h2>
             <p className=" text-sm w-64 font-works text-[#959595]">Preencha as informações abaixo para fazer log in.</p>
-            <Input id="email" placeholder="E-mail" type="email" />
-            <Input id="senha" placeholder="Senha" type="password" />
+            <Input id="email" placeholder="E-mail" value={email} onChange={setEmail} name="email "type="email" />
+            <Input id="senha" placeholder="Senha" value={senha} onChange={setSenha} name="senha" type="password" />
             <div className="flex mt-4">
               <input type="checkbox" />
               <label className="ml-1 text-sm justify-center"> Manter-se conectado </label>
@@ -29,7 +58,7 @@ export default function Login() {
                 Esqueceu a senha?
               </Link>
             </div>
-            <PriButton>Entrar</PriButton>
+            <PriButton emitClickEvent={entrar}> Entrar</PriButton>
             <span className="flex items-center justify-between my-4">
               <svg xmlns="http://www.w3.org/2000/svg" width="145" height="2" viewBox="0 0 145 2" fill="none">
                 <path d="M1 1H143.146" stroke="url(#paint0_linear_745_212)" strokeWidth="2" strokeLinecap="round" />

@@ -17,9 +17,9 @@ export default function Cadastro() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [senha, setSenha] = useState("");
-  
+
   const cadastrar = async () => {
-      createUserWithEmailAndPassword(auth, email, senha)
+    createUserWithEmailAndPassword(auth, email, senha)
       .then(async (userCredential) => {
         const user = userCredential.user;
         const docRef = await addDoc(collection(db, "users"), {
@@ -27,21 +27,21 @@ export default function Cadastro() {
           name: name,
           uid: user.uid,
         });
+    
         window.location.pathname = "/";
       })
 
       .catch((error) => {
         if (senha.length < 8) {
-          alert("oleoleola")
-        } 
-        else if (
+          alert("oleoleola");
+        } else if (
           { error }.error.message ==
           "Firebase: Error (auth/email-already-in-use)."
         ) {
-          alert("aaaaa")
+          alert("aaaaa");
         }
       });
-}
+  };
 
   return (
     <Mobile>
@@ -67,9 +67,27 @@ export default function Cadastro() {
             <p className=" text-sm w-64 font-works text-[#959595]">
               Preencha as informações abaixo para iniciar sua experiência.
             </p>
-            <Input id="email" value={email} onChange={setEmail} placeholder="E-mail" type="email" />
-            <Input id="name" value={name}  onChange={setName} placeholder="Nome" type="text" />
-            <Input id="senha" value={senha} onChange={setSenha} placeholder="Senha" type="password" />
+            <Input
+              id="email"
+              value={email}
+              onChange={setEmail}
+              placeholder="E-mail"
+              type="email"
+            />
+            <Input
+              id="name"
+              value={name}
+              onChange={setName}
+              placeholder="Nome"
+              type="text"
+            />
+            <Input
+              id="senha"
+              value={senha}
+              onChange={setSenha}
+              placeholder="Senha"
+              type="password"
+            />
             <div className="flex mt-4">
               <input type="checkbox" />
               <label className="ml-1 text-sm justify-center">
@@ -83,7 +101,7 @@ export default function Cadastro() {
                 Esqueceu a senha?
               </Link>
             </div>
-            <PriButton  onClick={cadastrar}>Cadastrar</PriButton>
+            <PriButton emitClickEvent={cadastrar}>Cadastrar</PriButton>
             <span className="flex items-center justify-between my-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
