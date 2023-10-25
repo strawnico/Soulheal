@@ -25,14 +25,14 @@ export default function Login() {
             <div className="flex mt-4">
               <input type="checkbox" />
               <label className="ml-1 text-sm justify-center"> Manter-se conectado </label>
-              <Link href="/cadastro" className="text-verdePrincipal text-sm justify-center mx-auto ml-10">
+              <Link href="/" className="text-verdePrincipal text-sm justify-center mx-auto ml-10">
                 Esqueceu a senha?
               </Link>
             </div>
             <PriButton>Entrar</PriButton>
             <span className="flex items-center justify-between my-4">
               <svg xmlns="http://www.w3.org/2000/svg" width="145" height="2" viewBox="0 0 145 2" fill="none">
-                <path d="M1 1H143.146" stroke="url(#paint0_linear_745_212)" stroke-width="2" stroke-linecap="round" />
+                <path d="M1 1H143.146" stroke="url(#paint0_linear_745_212)" strokeWidth="2" strokeLinecap="round" />
                 <defs>
                   <linearGradient
                     id="paint0_linear_745_212"
@@ -42,14 +42,14 @@ export default function Login() {
                     y2="1.49929"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#C2C2C2" stop-opacity="0" />
-                    <stop offset="0.484375" stop-color="#BABABA" />
+                    <stop stopColor="#C2C2C2" stopOpacity="0" />
+                    <stop offset="0.484375" stopColor="#BABABA" />
                   </linearGradient>
                 </defs>
               </svg>
               <p className=" font-normal font-works text-[#BABABA] text-sm">ou</p>
               <svg xmlns="http://www.w3.org/2000/svg" width="145" height="2" viewBox="0 0 145 2" fill="none">
-                <path d="M143.699 1H1.55271" stroke="url(#paint0_linear_745_213)" stroke-width="2" stroke-linecap="round" />
+                <path d="M143.699 1H1.55271" stroke="url(#paint0_linear_745_213)" strokeWidth="2" strokeLinecap="round" />
                 <defs>
                   <linearGradient
                     id="paint0_linear_745_213"
@@ -59,15 +59,17 @@ export default function Login() {
                     y2="1.49929"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#C2C2C2" stop-opacity="0" />
-                    <stop offset="0.484375" stop-color="#BABABA" />
+                    <stop stopColor="#C2C2C2" stopOpacity="0" />
+                    <stop offset="0.484375" stopColor="#BABABA" />
                   </linearGradient>
                 </defs>
               </svg>
             </span>
             <span className="flex font-works text-sm justify-center">
               <p className=" text-[#929292]">Não tem uma conta?</p>
-              <p className=" text-verdePrincipal ml-1 font-bold">Cadastrar</p>
+              <Link href="/cadastro" className="text-verdePrincipal ml-1 font-bold">
+                Cadastrar
+              </Link>
             </span>
           </div>
         </div>
