@@ -39,7 +39,7 @@ export default function Login() {
   }
 
   return (
-    <Mobile>
+    <main>
       <div className="h-screen">
         <div className="relative">
           <Image src={ImagemInicial} className="w-full" alt="Picture of the author" />
@@ -103,6 +103,6 @@ export default function Login() {
           </div>
         </div>
       </div>
-    </Mobile>
+    </main>
   );
 }

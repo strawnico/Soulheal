@@ -4,6 +4,7 @@ import NavBar from '@/components/NavBar';
 import Switch from '@/components/meditation/switch';
 import Option from '@/components/meditation/option';
 import { useState } from 'react';
+import Mobile from '@/components/mobile';
 
 export default function Meditation() {
   const [switchOption, setSwitchOption] = useState('recuperar');
@@ -14,23 +15,13 @@ export default function Meditation() {
 
   const recuperarList = [
     {
-      name: 'Dormir',
-      id: 1,
-      image: 'https://uploaddeimagens.com.br/images/004/647/035/original/sleep.png?1698241563',
-    },
-    {
-      name: 'Respirar',
-      id: 2,
-      image: 'https://uploaddeimagens.com.br/images/004/647/090/original/breath.png?1698243350',
-    },
-    {
       name: 'Ansiedade',
-      id: 3,
+      id: 1,
       image: 'https://uploaddeimagens.com.br/images/004/647/095/original/ansiet.png?1698243589',
     },
     {
       name: 'Estresse',
-      id: 4,
+      id: 2,
       image: 'https://uploaddeimagens.com.br/images/004/647/097/original/estresse.png?1698243718',
     },
   ];
@@ -49,7 +40,7 @@ export default function Meditation() {
   ];
 
   return (
-    <div>
+    <main>
       <div className="h-32 w-full flex-col flex items-center gap-2 justify-center shadow-lg rounded-b-3xl">
         <p className="font-semibold text-2xl text-gray-600">Meditação</p>
         <Switch selectedOption={switchOption} emitClickEvent={handleClickEvent}></Switch>
@@ -64,6 +55,6 @@ export default function Meditation() {
             })}
       </div>
       <NavBar selectedOption={'Meditation'}></NavBar>
-    </div>
+    </main>
   );
 }

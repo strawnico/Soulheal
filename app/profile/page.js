@@ -11,7 +11,10 @@ export default function Profile() {
   return (
     <main className="font-works flex flex-col gap-10">
       <div className="relative flex justify-center w-full">
-        <Image className="w-full h-32 object-cover rounded-b-3xl" src={ImagemInicial}></Image>
+        <Image
+          className="w-full h-32 object-cover rounded-b-3xl"
+          src={ImagemInicial}
+        ></Image>
         <div className="flex justify-center items-center w-28 h-28 rounded-full bg-gray-200 absolute bottom-[-2rem]">
           <BsPerson className="w-12 h-12 text-gray-400"></BsPerson>
         </div>
@@ -25,6 +28,11 @@ export default function Profile() {
           <SecButton>Configurações</SecButton>
         </Link>
         <SecButton>Planos</SecButton>
+        <Link href="/">
+          <button className="bg-[#ffe8e873] font-works transition-all active:scale-90 rounded-md w-72 h-10 text-[#ee644c] sm:text-base text-sm font-medium ">
+            Sair
+          </button>
+        </Link>
       </div>
       <NavBar selectedOption={"Profile"}></NavBar>
     </main>

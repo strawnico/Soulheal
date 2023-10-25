@@ -9,6 +9,7 @@ module.exports = {
       },
       fontFamily: {
         works: ["Work sans", "sans-serif"],
+        molengo: ["Molengo", "sans-serif"]
       },
       colors: {
         verdePrincipal: "#7B9A74",

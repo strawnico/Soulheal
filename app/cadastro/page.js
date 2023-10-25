@@ -44,7 +44,7 @@ export default function Cadastro() {
   };
 
   return (
-    <Mobile>
+    <main>
       <div className="h-screen">
         <div className="relative">
           <Image
@@ -170,6 +170,6 @@ export default function Cadastro() {
           </div>
         </div>
       </div>
-    </Mobile>
+    </main>
   );
 }

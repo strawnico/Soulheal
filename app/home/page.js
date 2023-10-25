@@ -7,15 +7,26 @@ import Image from "next/image";
 import WaterTop from "../../public/waterTop.png";
 import { BsPlus } from "react-icons/bs";
 import ExerciseGroup from "@/components/gym/ExerciseGroup";
+import Mobile from "@/components/mobile";
 
 export default function Home() {
   return (
     <div>
+      <div className=" h-20 w-full flex-col flex items-center justify-center shadow-lg">
+        <p className="text-2xl text-verdePrincipal font-molengo font-extralight">
+          SOULHEAL
+        </p>
+        <p className="text-base text-verdePrincipal font-works font-normal">
+          be healthy
+        </p>
+      </div>
       <main className="flex flex-col p-6 gap-5 homeOptionsListHeight overflow-y-scroll">
         <div className="flex flex-col items-center relative border-2 border-[#BABABA] h-40">
           <div className="mt-2 flex items-center justify-center w-full">
             <div className="flex flex-col items-end">
-              <p className="text-center font-works text-xl font-semibold">Água</p>
+              <p className="text-center font-works text-xl font-semibold">
+                Água
+              </p>
               <p className="text-center font-works text-gray-400">Meta 2L</p>
             </div>
             <div className="absolute right-4 bg-gray-50 p-3 rounded-full cursor-pointer hover:opacity-50 active:scale-90 transition-all">
@@ -30,7 +41,9 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col items-center justify-center border-2 border-[#BABABA] rounded-md p-4">
-          <p className="text-center font-works text-gray-400">Você não possuí um plano de dieta</p>
+          <p className="text-center font-works text-gray-400">
+            Você não possuí um plano de dieta
+          </p>
           <Link href="./diet/calculator" className="w-72">
             <PriButton>Criar plano</PriButton>
           </Link>
@@ -39,7 +52,9 @@ export default function Home() {
         <div className="flex flex-col items-center relative border-2 border-[#BABABA] rounded-md p-4 gap-5">
           <div className="flex items-center justify-center w-full">
             <div className="flex flex-col items-end">
-              <p className="text-center font-works text-xl font-semibold">Treino</p>
+              <p className="text-center font-works text-xl font-semibold">
+                Treino
+              </p>
               <p className="text-center font-works text-gray-400">de Força</p>
             </div>
           </div>
