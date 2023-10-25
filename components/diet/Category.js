@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Category(props) {
-  const href = `/diet/category/${props.name}`;
+  const href = `/diet/category/${props.id}`;
 
   return (
-    <Link href={href}>
+    <Link href={href} className="max-h-28 max-w-full">
       <div className="flex justify-center items-center w-full h-28 rounded-md relative hover:opacity-80 cursor-pointer active:scale-90 transition-all">
         <Image
           className="w-full h-full rounded-md"
