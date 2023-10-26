@@ -39,6 +39,7 @@ export default function Diet() {
   ]);
   const [originalCategoriesList, setOriginalCategoriesList] = useState([]);
   const [searchValue, setSearchValue] = useState("");
+  const [ item, setItem] = useState("");
 
   const handleInputChange = (value) => {
     setSearchValue(value);
@@ -46,6 +47,7 @@ export default function Diet() {
 
   useEffect(() => {
     setOriginalCategoriesList(categoriesList);
+    setItem(localStorage.getItem("formValue"))
   }, []);
 
   useEffect(() => {
@@ -59,15 +61,15 @@ export default function Diet() {
     <main>
       <div className="flex flex-col p-6">
         <div className="flex flex-col items-center justify-center border-2 border-[#BABABA] rounded-md h-40">
-          {localStorage?.getItem("formValue") ? (
+          {item ? (
             <div>
               <p>
                 Plano atual:{" "}
-                {JSON.parse(localStorage?.getItem("formValue")).dietType}
+                {JSON.parse(item).dietType}
               </p>
               <p>
                 Objetivo:{" "}
-                {JSON.parse(localStorage?.getItem("formValue")).objetivo} peso
+                {JSON.parse(item).objetivo} peso
               </p>
               <Link href="./diet/calculator" className="w-72">
                 <PriButton>Trocar plano</PriButton>
@@ -84,7 +86,7 @@ export default function Diet() {
             </div>
           )}
         </div>
-        {localStorage?.getItem("formValue") ? (
+        {item ? (
           <div>
             <Input
               placeholder="Buscar"
