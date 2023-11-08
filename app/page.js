@@ -59,7 +59,15 @@ export default function Login() {
             <h2 className="font-works font-bold text-xl"> Olá novamente 👋 </h2>
             <p className=" text-sm w-64 font-works text-[#959595]">Preencha as informações abaixo para fazer log in.</p>
             <Input id="email" placeholder="E-mail" value={email} onChange={setEmail} name="email " type="email" />
-            <Input id="senha" placeholder="Senha" value={senha} onChange={setSenha} name="senha" type="password" />
+            <Input
+              id="senha"
+              placeholder="Senha"
+              value={senha}
+              onChange={setSenha}
+              name="senha"
+              type="password"
+              hasShowHidePassword={true}
+            />
             <div className="flex mt-4">
               <input type="checkbox" />
               <label className="ml-1 text-sm justify-center"> Manter-se conectado </label>
