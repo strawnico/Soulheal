@@ -12,6 +12,7 @@ import { useState, useEffect } from 'react';
 
 export default function Home() {
   const [item, setItem] = useState('');
+  const [waterQuantity, setWaterQuantity] = useState('0');
 
   useEffect(() => {
     setItem(localStorage.getItem('formValue'));
@@ -24,20 +25,25 @@ export default function Home() {
         <p className="text-base text-verdePrincipal font-works font-normal">be healthy</p>
       </div>
       <main className="flex flex-col p-6 gap-5 homeOptionsListHeight overflow-y-scroll">
-        <div className="flex flex-col items-center relative border-2 border-[#BABABA] h-40">
+        <div className="flex flex-col items-center overflow-hidden relative border-2 border-[#BABABA] min-h-[10rem] rounded-md">
           <div className="mt-2 flex items-center justify-center w-full">
-            <div className="flex flex-col items-end">
+            <div className="flex flex-col items-end z-10">
               <p className="text-center font-works text-xl font-semibold">Água</p>
               <p className="text-center font-works text-gray-400">Meta 2L</p>
             </div>
-            <div className="absolute right-4 bg-gray-50 p-3 rounded-full cursor-pointer hover:opacity-50 active:scale-90 transition-all">
+            <div
+              onClick={() => {
+                setWaterQuantity(Number(waterQuantity) + 200);
+              }}
+              className="absolute right-4 z-10 bg-gray-50 p-3 rounded-full cursor-pointer hover:opacity-50 active:scale-90 transition-all"
+            >
               <BsPlus className="text-gray-500 text-xl"></BsPlus>
             </div>
           </div>
           <div className="absolute bottom-0">
             <Image src={WaterTop}></Image>
-            <p className="bg-[#9CCAFF] text-center">450ml</p>
-            <div className="w-full h-4 bg-[#9CCAFF] rounded-b-md"></div>
+            <p className="bg-[#9CCAFF] text-center w-full absolute bottom-0">{waterQuantity}ml</p>
+            <div style={{ height: waterQuantity / 14 + 'px' }} className={`w-full z-0 bg-[#9CCAFF] rounded-b-md`}></div>
           </div>
         </div>
 
