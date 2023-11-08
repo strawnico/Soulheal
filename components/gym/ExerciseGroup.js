@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { BiSolidRightArrow } from "react-icons/bi";
+import { BiSolidRightArrow } from 'react-icons/bi';
 
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function ExerciseGroup(props) {
   const href = `/gym/train/${props.name}`;
@@ -11,8 +11,8 @@ export default function ExerciseGroup(props) {
     <div
       className={
         props.isFinished
-          ? "w-full flex shadow-md p-6 flex-col gap-1 border-verdePrincipal border-4 rounded-md relative"
-          : "w-full flex shadow-md p-6 flex-col gap-1 rounded-md"
+          ? 'w-full flex shadow-md p-6 flex-col gap-1 border-verdePrincipal border-4 rounded-md relative'
+          : 'w-full flex shadow-md p-6 flex-col gap-1 rounded-md'
       }
     >
       <div className="flex w-full justify-between ">
@@ -38,7 +38,7 @@ export default function ExerciseGroup(props) {
       </div>
       <p className="mt-2">{props.exercisesQuantity} exercícios</p>
       {props.isFinished ? (
-        <div className="absolute bottom-0 right-0 p-2 bg-verdePrincipal rounded-tl-full flex text-white">
+        <div className="absolute bottom-0 right-0 p-2 pl-4 bg-verdePrincipal rounded-tl-full flex text-white">
           <p className="text-sm">Concluido</p>
         </div>
       ) : (

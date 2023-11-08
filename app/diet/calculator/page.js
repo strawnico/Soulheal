@@ -109,7 +109,7 @@ export default function Calculator() {
           <option disabled selected>
             Tipo de alimentação
           </option>
-          <option value="carnivoro">Carnívoro</option>
+          <option value="onivoro">Onívoro</option>
           <option value="vegetariano">Vegetariano</option>
         </select>
         <select

@@ -49,7 +49,7 @@ export default function Home() {
 
         <div className="flex flex-col items-center justify-center border-2 border-[#BABABA] rounded-md p-4">
           {item ? (
-            <div>
+            <div className="text-center">
               <p>Plano atual: {JSON.parse(item).dietType}</p>
               <p>Objetivo: {JSON.parse(item).objetivo} peso</p>
               <Link href="./diet/calculator" className="w-72">
