@@ -12,7 +12,7 @@ export default function ExerciseGroup(props) {
       className={
         props.isFinished
           ? 'w-full flex shadow-md p-6 flex-col gap-1 border-verdePrincipal border-4 rounded-md relative'
-          : 'w-full flex shadow-md p-6 flex-col gap-1 rounded-md'
+          : 'w-full flex border p-4 flex-col gap-1 rounded-md'
       }
     >
       <div className="flex w-full justify-between ">
