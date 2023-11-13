@@ -9,6 +9,7 @@ import axios from 'axios';
 import { useDeferredValue, useEffect, useState } from 'react';
 import Link from 'next/link';
 import Mobile from '@/components/mobile';
+import EnterSafe from "../../components/safe.js"
 
 export default function Diet() {
   const [categoriesList, setCategoriesList] = useState([
@@ -45,6 +46,7 @@ export default function Diet() {
     setSearchValue(value);
   };
 
+
   useEffect(() => {
     setOriginalCategoriesList(categoriesList);
     setItem(localStorage.getItem('formValue'));
@@ -58,7 +60,7 @@ export default function Diet() {
   }, [searchValue, originalCategoriesList]);
 
   return (
-    <main>
+    <EnterSafe>
       <div className=" h-20 w-full flex-col flex items-center justify-center shadow-lg">
         <p className="text-2xl text-black font-works font-semibold">Dieta</p>
       </div>
@@ -109,6 +111,6 @@ export default function Diet() {
         )}
       </div>
       <NavBar selectedOption={'Diet'}></NavBar>
-    </main>
+    </EnterSafe>
   );
 }

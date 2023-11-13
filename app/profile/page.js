@@ -14,15 +14,17 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default function Profile() {
   const [userName, setUserName] = useState(null);
-
+  const [loading, setLoading] = useState(true);
   const auth = getAuth();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         getName();
+        setLoading(false)
       } else {
-        console.log("Usuário não autenticado");
+        console.log("Usuário não autenticado")
+        window.location.pathname = "/"
       }
     });
 
@@ -49,6 +51,10 @@ export default function Profile() {
   }
 
   return (
+    <div>
+      {loading ? (
+        <h1>Carregando...</h1>
+      ) : (
         <main className="font-works flex flex-col gap-10">
           <div className="relative flex justify-center w-full">
             <Image
@@ -78,5 +84,7 @@ export default function Profile() {
           </div>
           <NavBar selectedOption={"Profile"}></NavBar>
         </main>
+      )}
+    </div>
   );
 }

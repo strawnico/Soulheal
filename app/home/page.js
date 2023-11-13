@@ -9,6 +9,7 @@ import { BsPlus } from "react-icons/bs";
 import ExerciseGroup from "@/components/gym/ExerciseGroup";
 import Mobile from "@/components/mobile";
 import { useState, useEffect } from "react";
+import EnterSafe from "../../components/safe.js"
 
 export default function Home() {
   const [item, setItem] = useState("");
@@ -19,7 +20,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <EnterSafe>
       <div className=" h-20 w-full flex-col flex items-center justify-center shadow-lg">
         <p className="text-2xl text-verdePrincipal font-molengo font-extralight">
           SOULHEAL
@@ -111,6 +112,6 @@ export default function Home() {
         </div>
       </main>
       <NavBar selectedOption={"Home"}></NavBar>
-    </div>
+    </EnterSafe>
   );
 }
