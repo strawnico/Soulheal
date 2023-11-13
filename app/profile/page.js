@@ -6,8 +6,51 @@ import ImagemInicial from '../../public/imgInicial.png';
 import { BsPerson } from 'react-icons/bs';
 import SecButton from '../../components/SecondaryButton';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation'
+import { db } from "../../auth/firebase.js";
+import {
+  doc,
+  getDoc
+} from "firebase/firestore";
+import { useState, useEffect } from "react";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default function Profile() {
+  const [userName, setUserName] = useState(null);
+
+  const auth = getAuth();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        getName();
+      } else {
+        console.log("Usuário não autenticado");
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  async function getName() {
+    const user = auth.currentUser;
+
+    if (!user) {
+      console.log("Usuário não autenticado");
+      return;
+    }
+
+    const docRef = doc(db, "users", user.uid);
+    const docSnap = await getDoc(docRef);
+  
+    if (docSnap.exists()){
+      const userName = docSnap.data().name;
+      setUserName(userName);
+    } else {
+      console.log("error");
+    }
+  }  
+
   return (
     <main className="font-works flex flex-col gap-10">
       <div className="relative flex justify-center w-full">
@@ -17,7 +60,7 @@ export default function Profile() {
         </div>
       </div>
       <div className="w-full flex flex-col items-center">
-        <p className="text-xl font-bold">Gustavo Braga</p>
+        <p className="text-xl font-bold">{userName}</p>
         <p>Desde 2023</p>
       </div>
       <div className="w-full flex flex-col gap-4 items-center">

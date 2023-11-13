@@ -10,7 +10,7 @@ import Mobile from '../../components/mobile';
 import { useState } from 'react';
 import { auth } from '../../auth/firebase';
 import { db } from '../../auth/firebase.js';
-import { collection, addDoc } from 'firebase/firestore';
+import { setDoc, doc } from 'firebase/firestore';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -23,11 +23,11 @@ export default function Cadastro() {
     createUserWithEmailAndPassword(auth, email, senha)
       .then(async (userCredential) => {
         const user = userCredential.user;
-        const docRef = await addDoc(collection(db, 'users'), {
+        const docRef = await setDoc(doc(db, "users", user.uid ), {
           email: email,
           name: name,
           uid: user.uid,
-        });
+        })
         notifySuccess();
         window.location.pathname = '/';
       })
