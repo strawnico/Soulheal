@@ -72,8 +72,8 @@ export default function Cadastro() {
     <main>
       <div className="h-screen">
         <div className="relative">
-          <Image src={ImagemInicial} className="w-full" alt="Picture of the author" />
-          <Image className="absolute bottom-[-1.5rem] left-7" src={Logo} alt="Picture of the author" />
+          <Image src={ImagemInicial} className="w-full h-48 object-cover rounded-b-3xl" alt="Picture of the author" />
+          <Image className="absolute bottom-[-1.5rem] lg:left-[34%] md:left-[29%] left-[8%]" src={Logo} alt="Picture of the author" />
         </div>
         <div className="flex mt-8">
           <div className="justify-center flex flex-col mx-auto">
