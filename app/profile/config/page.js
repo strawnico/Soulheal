@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { IoIosArrowBack } from "react-icons/io";
-import Input from "../../components/CompInput";
+import Link from 'next/link';
+import { IoIosArrowBack } from 'react-icons/io';
+import Input from '../../../components/CompInput';
 
 export default function Config() {
   return (
     <main className="font-works flex flex-col p-6">
       <div className="flex items-center gap-4">
-        <Link href={"./profile"}>
+        <Link href={'../profile'}>
           <IoIosArrowBack className="text-2xl"></IoIosArrowBack>
         </Link>
         <p className="text-2xl font-semibold">Configurações</p>

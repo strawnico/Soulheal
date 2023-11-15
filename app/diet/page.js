@@ -9,6 +9,7 @@ import axios from 'axios';
 import { useDeferredValue, useEffect, useState } from 'react';
 import Link from 'next/link';
 import Mobile from '@/components/mobile';
+import EnterSafe from "../../components/safe.js"
 
 export default function Diet() {
   const [categoriesList, setCategoriesList] = useState([
@@ -45,6 +46,7 @@ export default function Diet() {
     setSearchValue(value);
   };
 
+
   useEffect(() => {
     setOriginalCategoriesList(categoriesList);
     setItem(localStorage.getItem('formValue'));
@@ -58,11 +60,14 @@ export default function Diet() {
   }, [searchValue, originalCategoriesList]);
 
   return (
-    <main>
+    <EnterSafe>
+      <div className=" h-20 w-full flex-col flex items-center justify-center shadow-lg">
+        <p className="text-2xl text-black font-works font-semibold">Dieta</p>
+      </div>
       <div className="flex flex-col p-6">
         <div className="flex flex-col items-center justify-center border-2 border-[#BABABA] rounded-md h-40">
           {item ? (
-            <div>
+            <div className="text-center">
               <p>Plano atual: {JSON.parse(item).dietType}</p>
               <p>Objetivo: {JSON.parse(item).objetivo} peso</p>
               <Link href="./diet/calculator" className="w-72">
@@ -93,7 +98,7 @@ export default function Diet() {
         {item ? (
           <div>
             <Input placeholder="Buscar" value={searchValue} onChange={handleInputChange}></Input>
-            <div className="mt-4 gap-2 grid grid-cols-2">
+            <div className="mt-4 gap-2 grid grid-cols-2 dietListHeight">
               {categoriesList.map((category) => {
                 return (
                   <Category key={category.id} id={category.id} name={category.name} image={category.image}></Category>
@@ -106,6 +111,6 @@ export default function Diet() {
         )}
       </div>
       <NavBar selectedOption={'Diet'}></NavBar>
-    </main>
+    </EnterSafe>
   );
 }
