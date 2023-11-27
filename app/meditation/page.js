@@ -17,31 +17,34 @@ export default function Meditation() {
     {
       name: "Ansiedade",
       id: 1,
-      image:
-        "https://uploaddeimagens.com.br/images/004/647/095/original/ansiet.png?1698243589",
+      image: "https://uploaddeimagens.com.br/images/004/647/095/original/ansiet.png?1698243589",
+      // Mais detalhes...
     },
     {
       name: "Estresse",
       id: 2,
-      image:
-        "https://uploaddeimagens.com.br/images/004/647/097/original/estresse.png?1698243718",
+      image: "https://uploaddeimagens.com.br/images/004/647/097/original/estresse.png?1698243718",
+      // Mais detalhes...
     },
+    // Outros itens da lista de meditações para recuperação
   ];
-
+  
   const evoluirList = [
     {
       name: "Dormir",
-      id: 1,
-      image:
-        "https://uploaddeimagens.com.br/images/004/647/035/original/sleep.png?1698241563",
+      id: 3,
+      image: "https://uploaddeimagens.com.br/images/004/647/035/original/sleep.png?1698241563",
+      // Mais detalhes...
     },
     {
       name: "Respirar",
-      id: 2,
-      image:
-        "https://uploaddeimagens.com.br/images/004/647/090/original/breath.png?1698243350",
+      id: 4,
+      image: "https://uploaddeimagens.com.br/images/004/647/090/original/breath.png?1698243350",
+      // Mais detalhes...
     },
+    // Outros itens da lista de meditações para evolução
   ];
+  
 
   return (
     <EnterSafe>
@@ -57,19 +60,21 @@ export default function Meditation() {
           ? recuperarList.map((recuperarItem) => {
               return (
                 <Option
-                  key={recuperarItem}
+                  key={recuperarItem.id}
                   optionName={recuperarItem.name}
+                  optionId={recuperarItem.id.toString()}
                   image={recuperarItem.image}
-                ></Option>
+                />
               );
             })
           : evoluirList.map((evoluirItem) => {
               return (
                 <Option
-                  key={evoluirItem}
+                  key={evoluirItem.id}
                   optionName={evoluirItem.name}
+                  optionId={evoluirItem.id.toString()}
                   image={evoluirItem.image}
-                ></Option>
+                />
               );
             })}
       </div>
