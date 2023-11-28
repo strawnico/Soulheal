@@ -7,9 +7,9 @@ import Button from "@/components/PrimaryButton";
 
 export default function Page({ params }) {
   return (
-    <main className="font-works flex flex-col p-6">
+    <main className="font-works flex flex-col">
       <div className="h-20 w-full flex items-center justify-center shadow-lg">
-        <Link href={"../../gym"}>
+        <Link href={"../"}>
           <IoIosArrowBack className="text-2xl ml-4"></IoIosArrowBack>
         </Link>
         <p className="text-2xl text-black font-works font-semibold flex-1 text-center mr-6">
@@ -17,7 +17,7 @@ export default function Page({ params }) {
         </p>
       </div>
 
-      <div className="w-full mt-4 gap-4 flex flex-col">
+      <div className="w-full mt-4 gap-4 flex flex-col px-6">
         <Exercise
           id="1"
           name="Agachamento livre"
