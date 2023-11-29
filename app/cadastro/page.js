@@ -20,29 +20,33 @@ export default function Cadastro() {
   const [senha, setSenha] = useState('');
 
   const cadastrar = async () => {
+    var padrao = /^(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/\-])(?=.*[A-Z])(?=.*[a-z]).{8,}$/;
+
+    if (!padrao.test(senha)) return notifyPassword();
+
     createUserWithEmailAndPassword(auth, email, senha)
       .then(async (userCredential) => {
         const user = userCredential.user;
-        const docRef = await setDoc(doc(db, "users", user.uid ), {
+        const docRef = await setDoc(doc(db, 'users', user.uid), {
           email: email,
           name: name,
           uid: user.uid,
-        })
+        });
         notifySuccess();
         window.location.pathname = '/';
       })
 
       .catch((error) => {
         if (senha.length < 8) {
-          notifyPasswordShort();
+          notifyPassword();
         } else if ({ error }.error.message == 'Firebase: Error (auth/email-already-in-use).') {
           notifyEmailInUse();
         }
       });
   };
 
-  const notifyPasswordShort = () =>
-    toast('Insira uma senha de no mínimo 8 caracteres', {
+  const notifyPassword = () =>
+    toast('Insira uma senha de pelo menos um caracter especial, uma letra maiscula e no minimo 8 caracteres', {
       style: {
         background: 'red',
         color: 'white',
@@ -73,7 +77,11 @@ export default function Cadastro() {
       <div className="h-screen">
         <div className="relative">
           <Image src={ImagemInicial} className="w-full h-48 object-cover rounded-b-3xl" alt="Picture of the author" />
-          <Image className="absolute bottom-[-1.5rem] lg:left-[34%] md:left-[29%] left-[8%]" src={Logo} alt="Picture of the author" />
+          <Image
+            className="absolute bottom-[-1.5rem] lg:left-[34%] md:left-[29%] left-[8%]"
+            src={Logo}
+            alt="Picture of the author"
+          />
         </div>
         <div className="flex mt-8">
           <div className="justify-center flex flex-col mx-auto">
