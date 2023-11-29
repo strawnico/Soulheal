@@ -1,21 +1,23 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import NavBar from "@/components/NavBar";
-import Braco from "../../public/arm.png";
-import ExerciseGroup from "@/components/gym/ExerciseGroup";
-import Mobile from "@/components/mobile";
-import Link from "next/link";
-import TrainType from "@/components/gym/TrainType";
-import { useEffect, useState } from "react";
-import EnterSafe from "../../components/safe.js";
+import Image from 'next/image';
+import NavBar from '@/components/NavBar';
+import Braco from '../../public/arm.png';
+import ExerciseGroup from '@/components/gym/ExerciseGroup';
+import Mobile from '@/components/mobile';
+import Link from 'next/link';
+import TrainType from '@/components/gym/TrainType';
+import { useEffect, useState } from 'react';
+import EnterSafe from '../../components/safe.js';
 
 export default function Gym() {
-  const [currentTrainType, setCurrentTrainType] = useState("none");
+  const [currentTrainType, setCurrentTrainType] = useState('none');
+  const [finishedTrain, setFinishedTrain] = useState('');
 
   useEffect(() => {
-    if (localStorage.getItem("trainType"))
-      return setCurrentTrainType(localStorage.getItem("trainType"));
+    if (localStorage.getItem('finishedTrain')) setFinishedTrain(localStorage.getItem('finishedTrain'));
+    if (localStorage.getItem('trainType')) setCurrentTrainType(localStorage.getItem('trainType'));
+    console.log(finishedTrain);
   }, []);
 
   return (
@@ -26,28 +28,34 @@ export default function Gym() {
       <main className="flex flex-col p-6 gap-6">
         <div>
           <p className="font-semibold text-xl text-gray-500">MEU TREINO</p>
-          {currentTrainType == "none" ? (
-            <Link href={"/gym/trainSelector"}>
-              <TrainType id="none"></TrainType>
-            </Link>
+          {currentTrainType == 'none' ? (
+            <div className="border rounded-md">
+              <Link href={'/gym/trainSelector'}>
+                <TrainType id="none"></TrainType>
+              </Link>
+            </div>
           ) : (
-            <Link href={"/gym/trainSelector"}>
-              <TrainType id={currentTrainType}></TrainType>
-            </Link>
+            <div className="border rounded-md">
+              <Link href={'/gym/trainSelector'}>
+                <TrainType id={currentTrainType}></TrainType>
+              </Link>
+            </div>
           )}
         </div>
-        {currentTrainType != "none" ? (
+        {currentTrainType != 'none' ? (
           <div>
             <p className="font-semibold text-xl text-gray-500">TREINOS</p>
             <div className="w-full max-h-screen overflow-y-scroll workoutListHeight flex flex-col gap-2">
               <ExerciseGroup
+                isFinished={finishedTrain == 'TreinoA'}
                 name="TreinoA"
-                groups={["Glúteo", "Posterior"]}
+                groups={['Glúteo', 'Posterior']}
                 exercisesQuantity="7"
               ></ExerciseGroup>
               <ExerciseGroup
+                isFinished={finishedTrain == 'TreinoB'}
                 name="TreinoB"
-                groups={["Tríceps", "Bíceps"]}
+                groups={['Tríceps', 'Bíceps']}
                 exercisesQuantity="8"
               ></ExerciseGroup>
             </div>
@@ -56,7 +64,7 @@ export default function Gym() {
           false
         )}
       </main>
-      <NavBar selectedOption={"Gym"}></NavBar>
+      <NavBar selectedOption={'Gym'}></NavBar>
     </EnterSafe>
   );
 }

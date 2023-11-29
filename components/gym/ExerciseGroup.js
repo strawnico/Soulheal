@@ -30,7 +30,7 @@ export default function ExerciseGroup(props) {
       <div className="flex w-full gap-2">
         {props.groups.map((group) => {
           return (
-            <div className="p-1 bg-[#DEE6DC] px-2 rounded-md">
+            <div key={group} className="p-1 bg-[#DEE6DC] px-2 rounded-md">
               <p>{group}</p>
             </div>
           );
