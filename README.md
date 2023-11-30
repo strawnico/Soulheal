@@ -2,7 +2,7 @@
 
 ![preview](./.github/preview.png)
 
-> Site Soulheal - Seja maior do que a sua melhor desculpa
+> Soulheal - Seja maior do que a sua melhor desculpa
 
 Projeto construído para o projeto de conclusão do ensino técnico de desenvolvimento de sistemas.
 
