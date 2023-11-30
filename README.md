@@ -4,7 +4,8 @@
 
 > Soulheal - Seja maior do que a sua melhor desculpa
 
-[🔗 Clique aqui para acessar o site](https://soulheal-ten.vercel.app/)
+[🔗 Clique aqui para acessar o site](https://soulheal-ten.vercel.app/) <br/>
+[🔗 Clique aqui para acessar a landing page](https://soulheal.vercel.app/)
 
 # 🛠️ Documentação do site
 
