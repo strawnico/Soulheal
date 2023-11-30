@@ -6,7 +6,7 @@
 
 [🔗 Clique aqui para acessar o site](https://soulheal-ten.vercel.app/)
 
-# Documentação do site
+# 🛠️ Documentação do site
 
 ## Visão Geral
 
@@ -31,7 +31,7 @@ O SoulHeal é um site voltado para a promoção de hábitos saudáveis, abrangen
 5. Práticas Mentais e Bem-Estar
 - Meditação e Respiração: O aplicativo oferece sessões guiadas de meditação e exercícios de respiração para promover o relaxamento e o equilíbrio mental.
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 - Frontend: Next.js para a interface do usuário responsiva e amigável.
 - Banco de Dados: Utilização do firebase para armazenar informações de perfil.
 - Armazenamento de dados: Local Storage para armazenar e persistir dados localmente no computador do usuário. 
@@ -51,6 +51,8 @@ O SoulHeal é um site voltado para a promoção de hábitos saudáveis, abrangen
 
 > O SoulHeal foi desenvolvido com o intuito de oferecer uma abordagem holística para a saúde e o bem-estar, fornecendo aos usuários uma ferramenta abrangente para melhorar seus hábitos e qualidade de vida.
 Esta documentação está sujeita a atualizações conforme novas funcionalidades e melhorias são implementadas no aplicativo SoulHeal.
+
+---------------------
 
 ## 👥 Alunos
 
