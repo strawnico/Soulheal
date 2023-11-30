@@ -1,34 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Academia Sesi
 
-## Getting Started
+![preview](./.github/preview.png)
 
-First, run the development server:
+> Site Soulheal - Seja maior do que a sua melhor desculpa
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Projeto construído para o projeto de conclusão do ensino técnico de desenvolvimento de sistemas.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[🔗 Clique aqui para acessar o site](https://soulheal-ten.vercel.app/)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🛠️ Tecnologias 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- HTML
+- CSS
+- JavaScript
+- Nextjs
+- Git e Github
+- Firebase
 
-## Learn More
+## 👥 Alunos
 
-To learn more about Next.js, take a look at the following resources:
+- Nicole Licyane
+- Gustavo Braga
+- Pedro Henrique
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ✉️ Contato
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+nicole_lv_silva@estudante.sesisenai.org.br<br>
+gustavo_s_braga@estudante.sesisenai.org.br<br>
+pedro_hc_nunes@estudante.sesisenai.org.br<br>
 
-## Deploy on Vercel
+<br>
+<br>
+------------------------------//------------------------------
+<br>
+<br>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## ⚠️ Requisitos Não Funcionais
+- Site feito com javascript, html e css (Tailwind);<br>
+- Framework: Next.js;<br>
+- Armazenamento em localStorage e banco de dados firebase;<br>
+- Responsivo;<br>
