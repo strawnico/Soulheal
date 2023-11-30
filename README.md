@@ -8,6 +8,10 @@ Projeto construído para o projeto de conclusão do ensino técnico de desenvolv
 
 [🔗 Clique aqui para acessar o site](https://soulheal-ten.vercel.app/)
 
+## 🥑 SoulHeal
+
+No soulheal há diversos hábitos saudáveis em um lugar só. Terá opções para consumo de água (de acordo com o peso), alimentação e treinos focados para o objetivo do usuário e também práticas mentais, como meditação, respiração e etc.
+
 ## 🛠️ Tecnologias 
 
 - HTML
