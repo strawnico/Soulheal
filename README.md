@@ -1,4 +1,4 @@
-# Academia Sesi
+# SoulHeal
 
 ![preview](./.github/preview.png)
 
