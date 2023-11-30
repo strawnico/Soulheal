@@ -30,7 +30,6 @@ gustavo_s_braga@estudante.sesisenai.org.br<br>
 pedro_hc_nunes@estudante.sesisenai.org.br<br>
 
 <br>
-<br>
 ------------------------------//------------------------------
 <br>
 <br>
