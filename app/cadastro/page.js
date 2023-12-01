@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ImagemInicial from '../../public/imgInicial.png';
 import Logo from '../../public/logo.png';
+import SideImage from '../../public/sideImage.png';
 import PriButton from '../../components/PrimaryButton';
 import Input from '../../components/CompInput';
 import Mobile from '../../components/mobile';
@@ -73,18 +74,24 @@ export default function Cadastro() {
     });
 
   return (
-    <main>
-      <div className="h-screen">
-        <div className="relative">
-          <Image src={ImagemInicial} className="w-full h-48 object-cover rounded-b-3xl" alt="Picture of the author" />
+    <main className="lg:flex lg:justify-center">
+      <div className="h-screen flex flex-col lg:flex-row max-w-screen-2xl">
+        <div className="relative lg:flex-1 lg:flex lg:p-6">
+          <Image src={SideImage} className="hidden lg:flex"></Image>
           <Image
-            className="absolute bottom-[-1.5rem] lg:left-[34%] md:left-[29%] left-[8%]"
+            src={ImagemInicial}
+            className="w-full lg:hidden h-48 object-cover rounded-b-3xl"
+            alt="Picture of the author"
+          />
+          <Image
+            className="absolute bottom-[-1.5rem] lg:left-[34%] lg:hidden md:left-[29%] left-[8%]"
             src={Logo}
             alt="Picture of the author"
           />
         </div>
-        <div className="flex mt-8">
+        <div className="flex mt-8 lg:mt-0 lg:h-screen h-fit lg:flex-1">
           <div className="justify-center flex flex-col mx-auto">
+            <Image className="hidden lg:flex mb-4" src={Logo} alt="Picture of the author" />
             <h2 className="font-works font-bold text-xl"> Olá, seja bem-vindo! </h2>
             <p className=" text-sm w-64 font-works text-[#959595]">
               Preencha as informações abaixo para iniciar sua experiência.
