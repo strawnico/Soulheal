@@ -18,7 +18,7 @@ export default function Safe({children}) {
       }
     });
 
-    return () => unsubscribe();s
+    return () => unsubscribe();
   }, []);
 
   return (

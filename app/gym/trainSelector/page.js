@@ -23,6 +23,7 @@ export default function TrainSelector() {
           onClick={() => {
             setTypeToLocalStorage('1');
           }}
+          className="border rounded-md cursor-pointer hover:opacity-50 transition-all active:scale-90"
         >
           <TrainType id="1"></TrainType>
         </div>
@@ -30,6 +31,7 @@ export default function TrainSelector() {
           onClick={() => {
             setTypeToLocalStorage('2');
           }}
+          className="border rounded-md cursor-pointer hover:opacity-50 transition-all active:scale-90"
         >
           <TrainType id="2"></TrainType>
         </div>
@@ -37,6 +39,7 @@ export default function TrainSelector() {
           onClick={() => {
             setTypeToLocalStorage('3');
           }}
+          className="border rounded-md cursor-pointer hover:opacity-50 transition-all active:scale-90"
         >
           <TrainType id="3"></TrainType>
         </div>
@@ -44,6 +47,7 @@ export default function TrainSelector() {
           onClick={() => {
             setTypeToLocalStorage('4');
           }}
+          className="border rounded-md cursor-pointer hover:opacity-50 transition-all active:scale-90"
         >
           <TrainType id="4"></TrainType>
         </div>
@@ -51,6 +55,7 @@ export default function TrainSelector() {
           onClick={() => {
             setTypeToLocalStorage('5');
           }}
+          className="border rounded-md cursor-pointer hover:opacity-50 transition-all active:scale-90"
         >
           <TrainType id="5"></TrainType>
         </div>

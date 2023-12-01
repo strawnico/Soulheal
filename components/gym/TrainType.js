@@ -19,12 +19,18 @@ export default function TrainType(props) {
 
   return (
     <div>
-      <div className="w-full p-4 border rounded-md flex items-center gap-4 cursor-pointer hover:opacity-70 transition-all active:scale-90">
+      <div className="w-full p-4 rounded-md flex items-center gap-4">
         {props.id == 'none' ? (
           <div className="flex items-center flex-col w-full">
-            <p>Você não possuí um plano de treino</p>
-            <div className="w-40">
-              <PrimaryButton>Selecionar plano</PrimaryButton>
+            <p className="text-center">Você não possuí um plano de treino</p>
+            <div className="w-40 hover:opacity-70 transition-all active:scale-90">
+              <PrimaryButton
+                emitClickEvent={() => {
+                  false;
+                }}
+              >
+                Selecionar plano
+              </PrimaryButton>
             </div>
           </div>
         ) : (
